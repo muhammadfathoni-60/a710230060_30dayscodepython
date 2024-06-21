@@ -1,0 +1,7 @@
+def greet():
+    print("Hello! Welcome to our program.")
+    name = input("What's your name? ")
+    print(f"Nice to meet you, {name}!")
+
+# Panggil fungsi greet untuk menjalankan programnya
+greet()
