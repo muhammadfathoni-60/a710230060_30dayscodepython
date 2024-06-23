@@ -1,0 +1,44 @@
+# Definisi kelas Account
+class Account:
+    # Metode untuk inisialisasi objek Account
+    def __init__(self, acc_number, acc_holder, balance=0):
+        self.acc_number = acc_number
+        self.acc_holder = acc_holder
+        self.balance = balance
+
+    # Metode untuk deposit ke akun
+    def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+            print(f"Deposit of ${amount} successful. New balance is ${self.balance}")
+        else:
+            print("Deposit amount must be positive.")
+
+    # Metode untuk penarikan dari akun
+    def withdraw(self, amount):
+        if 0 < amount <= self.balance:
+            self.balance -= amount
+            print(f"Withdrawal of ${amount} successful. New balance is ${self.balance}")
+        else:
+            print("Insufficient funds or invalid amount.")
+
+    # Metode untuk menampilkan informasi akun
+    def display_info(self):
+        print(f"Account Number: {self.acc_number}")
+        print(f"Account Holder: {self.acc_holder}")
+        print(f"Balance: ${self.balance}")
+
+
+# Membuat objek dari kelas Account
+acc1 = Account("123456", "John Doe")
+acc2 = Account("789012", "Jane Smith", 1000)
+
+# Melakukan operasi deposit dan penarikan
+acc1.deposit(500)
+acc2.withdraw(200)
+
+# Menampilkan informasi akun
+print("\nAccount Information:")
+acc1.display_info()
+print("\nAccount Information:")
+acc2.display_info()
