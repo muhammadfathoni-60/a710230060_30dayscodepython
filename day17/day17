@@ -1,0 +1,32 @@
+# Class dasar atau superclass
+class Hewan:
+    def __init__(self, nama):
+        self.nama = nama
+
+    def bersuara(self):
+        raise NotImplementedError("Method bersuara harus diimplementasikan dalam subclass.")
+
+# Subclass pertama: Kucing
+class Kucing(Hewan):
+    def bersuara(self):
+        return f"{self.nama}: Meow!"
+
+# Subclass kedua: Anjing
+class Anjing(Hewan):
+    def bersuara(self):
+        return f"{self.nama}: Woof!"
+
+# Subclass ketiga: Burung
+class Burung(Hewan):
+    def bersuara(self):
+        return f"{self.nama}: Cuit cuit!"
+
+# Contoh penggunaan class Hewan dan subclass-nya
+if __name__ == "__main__":
+    kucing1 = Kucing("Meong")
+    anjing1 = Anjing("Doggy")
+    burung1 = Burung("Tweetie")
+
+    print(kucing1.bersuara())  # Output: Meong: Meow!
+    print(anjing1.bersuara())  # Output: Doggy: Woof!
+    print(burung1.bersuara())  # Output: Tweetie: Cuit cuit!
